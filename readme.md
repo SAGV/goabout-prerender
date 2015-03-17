@@ -97,7 +97,7 @@ prevent never-ending loops.
 		# To let our renderer know what domain to use.
 		proxy_set_header X-Download-From  https://goabout.com/
 		if ($prerender) {
-		    # Only proyx if $prerender is not set to 0.
+				# Only proyx if $prerender is not set to 0.
 			proxy_pass  http://localhost:8082/$uri?$args;
 		}
 	}
@@ -131,3 +131,16 @@ machine and only allow local connections to it in your firewall.
 Otherwise you could setup node.js and PhantomJS on your own server and
 set the proxy_pass rule to that machine.
 
+
+##More details on Heroku setup
+Check Heroku get started docs to figure out how it works in deep:
+https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+
+To setup the app in our case, you would need to install Heroku Toolbelt (as in the intro), login with heroku and type these commands:
+```
+heroku create my-cool-app-name --region eu
+heroku config:add BUILDPACK_URL=https://github.com/stomita/heroku-buildpack-phantomjs.git
+git add --all .
+git commit -m 'init'
+git push heroku master
+```
