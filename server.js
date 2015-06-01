@@ -3,6 +3,7 @@ var system = require('system');
 var urlModule = require('url');
 var extend = require('extend');
 var watch = require('./watch.js');
+require('newrelic');
 
 var checkVersion = function(major, minor, patch) {
     if (phantom.version.major < major) { return false; }
