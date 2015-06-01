@@ -77,6 +77,10 @@ And or check the User-Agent headers. We'll also make sure that if our
 PhantomJS browser requests the page, we'll _never_ prerender again, to
 prevent never-ending loops.
 
+### 5. Monitoring
+
+To make sure that there are no issues, you can activate New Relic monitoring. To do so, you'd need to fill `NEWRELIC_LICENCE` and `NEWRELIC_APPNAME` config variables. Check [New relic docs](https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/installing-maintaining-nodejs#installing) for more information.
+
 #### For instance with Nginx:
 
 
